@@ -1,6 +1,10 @@
 # Cloud-Computing-Pratham
+
 Overview of Projects on Amazon Web Services (AWS)
+
+
 ## Data Wrangling Project - UCW PLAR Procedure
+
 
 **Project Description**: Data Wrangling of Document List, Portfolio List and Student List Datasets of UCW's PLAR Procedure
 
@@ -80,6 +84,7 @@ Overview of Projects on Amazon Web Services (AWS)
 - Student List: Student records that include student IDs, Names, Age, Gender, Grade, Major, Email, Phone Number and GPA
 
 
+
 ### Draw.Io Design Diagram for EDA on AWS
 
 - ![Screenshot 2025-03-26 171812](https://github.com/user-attachments/assets/28c1527f-6ec4-4d72-8ddd-09a3dfc1745b)
@@ -96,7 +101,7 @@ Overview of Projects on Amazon Web Services (AWS)
 
 
 **Data Exploration and Filteration**
-- Exoloring the Data and filtering to only see the rows with adult students (Age > 18)
+- Expoloring the Data and filtering to only see the rows with adult students (Age > 18)
   ![Screenshot 2025-03-26 171009](https://github.com/user-attachments/assets/c1e9cea9-154d-4d1b-b42f-580fe4c0e8cf)
 
   
@@ -134,6 +139,8 @@ Overview of Projects on Amazon Web Services (AWS)
 **Project Title**: Understanding and Answering Business Questions for City of Vancouver's 311-contact center data using the city's AWS DAP. 
 
 **Objective**: The primary goal of this project is to conduct a descriptive analysis of City of Vancouver's 311-contact center data using the city's AWS cloud DAP.  Through this analysis, we aim to summarize key characteristics of the dataset and to answer the following business questions: 1. What was the average service level per month for the 311-contact center in the year 2024? 2.	What was the maximum numbers of calls City of Vancouver’s contact center handled per month in 2024?
+
+**Background**: City of Vancouver has migrated to AWS for its cloud computing needs and wants to have a cloud based Data Analytic Platform (DAP) to answer some important business questions for its 311-contact-center. 
 
 
 **Dataset**: The dataset contains city of vancouver's 311 contact center data from the year 2024 with the columns; Date, Calls Offered, Calls Handled, Calls Abandoned, Service Level, Average time of answering and BI_ID. 
@@ -186,6 +193,8 @@ Overview of Projects on Amazon Web Services (AWS)
 
     ![Screenshot 2025-03-26 185413](https://github.com/user-attachments/assets/4ed4777a-05de-40ac-b9a4-0d5600c7286f)  *Output of the SQL Query*
 
+
+
     ![Screenshot 2025-03-26 185744](https://github.com/user-attachments/assets/0f05eaf5-9a12-4561-8097-c4782a41070b) *Storage location of summarized statistics* 
 
 
@@ -206,7 +215,76 @@ Overview of Projects on Amazon Web Services (AWS)
 
 
 
+## Data Quality Control - UCW PLAR Procedure
+
+
+**Project Description**: Implementation of Data Quality Control For the Document Data of UCW's PLAR Procedure
+
+**Project Title**: Data Quality Control Steps for UCW's PLAR procedure. 
+
+**Objective**: The primary objective of this project is to perform a data quality control check on the dataset related to the documents submitted during UCW's PLAR process. These steps will ensure the accuracy, completeness, consistency, and freshness of the data. 
+
+**Background**: University Canada West has seen an increase in the number of potential students seeking recognition of their prior learning. To make sure the decision making is accurate the university wants to have a detailed quality control check for its 'Document List" dataset of its PLAR procedure. 
+
+
+
+***Draw.io design for the quality check implementation in AWS Console***
+![Screenshot 2025-03-26 194428](https://github.com/user-attachments/assets/61515ec4-9429-4da5-a922-9e8da17bfd8b) 
+
+**Methodology/Steps** 
+
+**Data Extraction**: The document data for quality check was extracted from the raw Amazon S3 bucket into a AWS Glue Visual ETL Job
+
+**Data Quality Evaluation** : AWS Glue's data evaluation node was used for this step to check the freshness, uniqueness and completeness of the dataset through the following rules on relevant schemas
+   - *Rules = [ Completeness "author" >= 0.95, 
+Uniqueness "document id" > 0.99,
+DataFreshness "date created" < 600 days]*
+
+**Data Conditional Routing** : After the implementation of data quality rules, the dataset was divided among the rows that passed the test and those that did not through the conditional router node of AWS Glue. 
+
+**Data Load Preparation**: The data was then adjusted by changing schema, dropping newly created unncesaary columns and by instructing AWS Glue to only have one partition. 
+
+**Data Loading**: The data that passed and failed the quality control rules was then loaded in the transformed data S3 bucket in the 'passed' and 'failed' and subfolders of the quality control folder of document list dataset, respectively. 
 
 
 
 
+
+***Complete AWS Glue Visual ETL for Data Quality Control***
+![Screenshot 2025-03-26 200436](https://github.com/user-attachments/assets/388375b3-2769-4193-8763-eace14f5b0dc)
+
+
+
+***Failed Data Loaded in the relevant subfolder***
+![Screenshot 2025-03-26 200507](https://github.com/user-attachments/assets/f3bf7a7e-5aec-4bac-b126-46855957d220)
+
+
+
+***Quality passed data loaded in the 'Passed' subfolder***
+![Screenshot 2025-03-26 200534](https://github.com/user-attachments/assets/56f6d0b7-6434-4ebd-92b1-dffd342a9f5b)
+
+
+**Tools and Technologies**
+- AWS Glue
+- AWS S3
+
+
+
+Deliverables:
+- Document list dataset consisting of rows that passed the quality control.
+- Identification of rows that did not pass the quality check.
+- Separate storage for quality check passed and failed data points of document list dataset for better analysis and evaluation.
+
+
+
+
+
+
+
+## AWS Cloud Foundation Badge 
+
+Link : https://www.credly.com/badges/0020c46e-eb09-4cb7-b284-bd916a1c2ab6/public_url
+
+Badge:
+
+<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="0020c46e-eb09-4cb7-b284-bd916a1c2ab6" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>  
