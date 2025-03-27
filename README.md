@@ -15,6 +15,11 @@ Overview of Projects on Amazon Web Services (AWS)
 - Document List: Document details such as document ID, Title, Author, File Type, Access Level, Category, Size, Owner
 - Portfolio List: Portfolio detils including, ID, names, owner, category, Number of projects, Primary Skill, Rating Visibility.
 
+**Design for The AWS Cloud Platfrom for Data Wrangling**
+
+![Screenshot 2025-03-26 165701](https://github.com/user-attachments/assets/84fea2be-8200-43c6-a0a1-896243166eeb)
+
+
 **Methodology/Steps** 
 
 **Data Profiling** - Profiling the datasets using AWS GlueDataBrew.
@@ -58,5 +63,67 @@ Overview of Projects on Amazon Web Services (AWS)
 **Deliverables:**
 - A profiled, cleaned and cataloged group of datasets ready for analysis and available in a suitable format such as CSV or Parquet
 - A report documenting the data wrangling process, including challenges encountered, methods employed, and final dataset characteristics.
+
+
+
+## Exploratory Data Analysis
+
+**Project Description**: Studying, exploring and performing initial analysis of Student List dataset of UCW's PLAR procedure.
+
+**Project Title**: Exploring the Student List Dataset of UCW's PLAR Procedure
+
+**Objective**: The primary goal of this project is to explore the various characterstics of the student list dataset of UCW's PLAR procedure, including its schema, column, content and basic summarization. 
+
+**Background**: University Canda West has accumulated student data for their PLAR procedure in the form of Student Lists dataset. The university now wants to perform meaninful analysis on this data in order to improve their PLAR services. 
+
+**Datasets**
+- Student List: Student records that include student IDs, Names, Age, Gender, Grade, Major, Email, Phone Number and GPA
+
+
+### Draw.Io Design Diagram for EDA on AWS
+
+- ![Screenshot 2025-03-26 171812](https://github.com/user-attachments/assets/28c1527f-6ec4-4d72-8ddd-09a3dfc1745b)
+
+
+
+**Methodology/Steps**
+**Data Collection and Preparation**:
+- Creating a new AWS Glue Visual ETL Job
+- Loading the Student List data from the relevant AWS Glue data catalog tables
+- Perform initial data cleaning and organisation steps which includes renaming columns for clarity and dropping irrelevant columns such as email and phone number.
+![Screenshot 2025-03-26 170934](https://github.com/user-attachments/assets/536cc1a6-678f-4dd1-80bf-75a97f669111)
+
+
+**Data Exploration and Filteration**
+- Exoloring the Data and filtering to only see the rows with adult students (Age > 18)
+  ![Screenshot 2025-03-26 171009](https://github.com/user-attachments/assets/c1e9cea9-154d-4d1b-b42f-580fe4c0e8cf)
+
+  
+**Initial Exploratory Data Summarization**
+- Aggregating data using AWS Glue's Aggregate Node with grouping by column 'major' with 'age' column to be aggregated by the fucntion 'average'.
+- Adding summarzing date in local time zone.
+  ![Screenshot 2025-03-26 171112](https://github.com/user-attachments/assets/7ee47eb3-eeb5-4a32-b556-8bdeb9b321ee)
+
+**Storing Data**
+- Loading summarized data and its reports in the curated Amazon S3 bucket.
+
+
+
+ ***Complete Visual ETL for Student List data exploration and Summarization***
+
+
+![Screenshot 2025-03-26 171954](https://github.com/user-attachments/assets/5c665d56-e28e-480b-ab0f-236783c752cc)
+
+
+  
+**Tools and Technologies**
+- AWS Glue
+
+**Deliverables**
+- A comprehensive Visual ETL containing all steps of extraction, cleaning, filtering and summarizing.
+- A detailed exploration of the dataset in question.
+
+
+  
 
 
