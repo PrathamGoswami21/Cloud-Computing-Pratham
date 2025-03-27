@@ -290,5 +290,5 @@ Badge:
 
 <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="0020c46e-eb09-4cb7-b284-bd916a1c2ab6" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script> 
 
-![aws-academy-graduate-aws-academy-cloud-foundations](https://github.com/user-attachments/assets/2d2fa354-e798-4c56-8070-0e64de149e3d)
+
 
