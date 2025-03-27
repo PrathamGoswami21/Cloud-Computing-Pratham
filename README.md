@@ -136,7 +136,7 @@ Overview of Projects on Amazon Web Services (AWS)
 **Objective**: The primary goal of this project is to conduct a descriptive analysis of City of Vancouver's 311-contact center data using the city's AWS cloud DAP.  Through this analysis, we aim to summarize key characteristics of the dataset and to answer the following business questions: 1. What was the average service level per month for the 311-contact center in the year 2024? 2.	What was the maximum numbers of calls City of Vancouver’s contact center handled per month in 2024?
 
 
-**Dataset**: The dataset contains city of vancouver's 311 contact center data from the year 2024 with the columns; Date, Calls Offered, Calls Handled, Calls Abandoned, Average Service Level, and BI_ID. 
+**Dataset**: The dataset contains city of vancouver's 311 contact center data from the year 2024 with the columns; Date, Calls Offered, Calls Handled, Calls Abandoned, Service Level, Average time of answering and BI_ID. 
 
 
 
@@ -156,6 +156,54 @@ Overview of Projects on Amazon Web Services (AWS)
 - AWS GlueDataBrew was used to profile the dataset in order to better understand its schema, correlations and overall characterstics.
 
 ![Screenshot 2025-03-26 182455](https://github.com/user-attachments/assets/eed2bc1d-3015-4942-864b-f5e5624c754e) *311-Contact center data profile*
+
+
+- By creating a project on DataBrew, the dataset was cleaned by renaming columns, formatting date and by addressing other issues.
+
+  ![Screenshot 2025-03-26 182725](https://github.com/user-attachments/assets/b45405ff-8802-4e71-ae3c-abcd5c075835) *Recipe depicting data cleaning steps*
+
+
+**Data Cataloging** - AWS Glue was used to create a database catalog for the dataset and Glue's Crawlers were used to create tables from the dataset. 
+
+  ![Screenshot 2025-03-26 183753](https://github.com/user-attachments/assets/e66b4a18-ad66-4ba8-b295-5929833508aa) *Data Catalog & Tables*
+
+
+**Initial Data Exploration** 
+
+  - Using AWS Glue's Visual ETL, the dataset was explored and further prepared for the descriptive analysis by taking important steps such as changing schema, and filtering the dataset to only inlcude days where more than 200 calls were offered by the contact center. Some initial summarization in the form of overall average service level were also performed to better know the dataset.
+
+
+    ![Screenshot 2025-03-26 184822](https://github.com/user-attachments/assets/3cd662c9-1a94-4d08-aed2-d66343af0b53) *Complete Visual ETL for Data exploration*
+
+
+
+**Descriptive Statistics**
+
+  - based on the filtered and cleaned data, AWS Athena was used to run SQL queries on the dataset to produce the required descriptive statistics. 
+
+    ![Screenshot 2025-03-26 185150](https://github.com/user-attachments/assets/589f09d9-d5c7-4de2-b965-58fc227c94d8) *Consolidated SQL Query*   
+
+
+    ![Screenshot 2025-03-26 185413](https://github.com/user-attachments/assets/4ed4777a-05de-40ac-b9a4-0d5600c7286f)  *Output of the SQL Query*
+
+    ![Screenshot 2025-03-26 185744](https://github.com/user-attachments/assets/0f05eaf5-9a12-4561-8097-c4782a41070b) *Storage location of summarized statistics* 
+
+
+
+
+**Tools and Technologies**
+- AWS S3 for data storage
+- AWS GlueDataBrew for data profiling and Cleaning
+- AWS Glue for data cataloging, crawling and Visual ETLs
+- AWS Athena for descriptive statistics through SQL queries. 
+
+
+**Deliverables**
+- Answers to the business question in the form of the SQL query results that are stored in the curated S3 bucket of city of Vancouver's contact center data DAP. 
+
+
+
+
 
 
 
