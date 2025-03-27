@@ -1,6 +1,6 @@
 # Cloud-Computing-Pratham
 Overview of Projects on Amazon Web Services (AWS)
-## Data Wrangling Project
+## Data Wrangling Project - UCW PLAR Procedure
 
 **Project Description**: Data Wrangling of Document List, Portfolio List and Student List Datasets of UCW's PLAR Procedure
 
@@ -66,7 +66,7 @@ Overview of Projects on Amazon Web Services (AWS)
 
 
 
-## Exploratory Data Analysis
+## Exploratory Data Analysis - Student Data from UCW's PLAR Procedure
 
 **Project Description**: Studying, exploring and performing initial analysis of Student List dataset of UCW's PLAR procedure.
 
@@ -87,6 +87,7 @@ Overview of Projects on Amazon Web Services (AWS)
 
 
 **Methodology/Steps**
+
 **Data Collection and Preparation**:
 - Creating a new AWS Glue Visual ETL Job
 - Loading the Student List data from the relevant AWS Glue data catalog tables
@@ -125,5 +126,39 @@ Overview of Projects on Amazon Web Services (AWS)
 
 
   
+
+## Descriptive Analysis - City of Vancouver
+
+**Project Description**: Descriptive Analysis of City of Vancouver's 311-contact center data using the city's AWS DAP. 
+
+**Project Title**: Understanding and Answering Business Questions for City of Vancouver's 311-contact center data using the city's AWS DAP. 
+
+**Objective**: The primary goal of this project is to conduct a descriptive analysis of City of Vancouver's 311-contact center data using the city's AWS cloud DAP.  Through this analysis, we aim to summarize key characteristics of the dataset and to answer the following business questions: 1. What was the average service level per month for the 311-contact center in the year 2024? 2.	What was the maximum numbers of calls City of Vancouver’s contact center handled per month in 2024?
+
+
+**Dataset**: The dataset contains city of vancouver's 311 contact center data from the year 2024 with the columns; Date, Calls Offered, Calls Handled, Calls Abandoned, Average Service Level, and BI_ID. 
+
+
+
+***Draw.io Diagram for the Implementation of the City's DAP on AWS***
+
+![image](https://github.com/user-attachments/assets/63e89daa-3e36-4d82-9afa-78d7ce086588)
+
+
+**Methodology/Steps**
+
+**Data Collection** - The data was collected and sourced from City of Vancouver's data portal and then uploaded in the raw Amazon S3 bucket. 
+
+![Screenshot 2025-03-26 182253](https://github.com/user-attachments/assets/10fb60b7-b82e-42c9-9a5a-d85f398f6fda)
+
+
+**Data Preparation**
+- AWS GlueDataBrew was used to profile the dataset in order to better understand its schema, correlations and overall characterstics.
+
+![Screenshot 2025-03-26 182455](https://github.com/user-attachments/assets/eed2bc1d-3015-4942-864b-f5e5624c754e) *311-Contact center data profile*
+
+
+
+
 
 
